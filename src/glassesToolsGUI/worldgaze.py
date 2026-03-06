@@ -100,10 +100,10 @@ def show_visualization(
         for p in planes:
             if frame_idx in poses[p]:
                 a = poses[p][frame_idx].get_origin_on_image(cam_params)
-                drawing.openCVCircle(frame, a, 3, (0, 255, 0), -1, sub_pixel_fac)
+                drawing.opencv_circle(frame, a, 3, (0, 255, 0), -1, sub_pixel_fac)
                 ll = 20
-                drawing.openCVLine(frame, (a[0], a[1] - ll), (a[0], a[1] + ll), (0, 255, 0), 1, sub_pixel_fac)
-                drawing.openCVLine(frame, (a[0] - ll, a[1]), (a[0] + ll, a[1]), (0, 255, 0), 1, sub_pixel_fac)
+                drawing.opencv_line(frame, (a[0], a[1] - ll), (a[0], a[1] + ll), (0, 255, 0), 1, sub_pixel_fac)
+                drawing.opencv_line(frame, (a[0] - ll, a[1]), (a[0] + ll, a[1]), (0, 255, 0), 1, sub_pixel_fac)
 
         gui.update_image(frame, frame_ts / 1000.0, frame_idx, window_id=gui.main_window_id)
 
